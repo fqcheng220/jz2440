@@ -62,19 +62,18 @@ int main(){
 	//s2<->D12 s3<->D11 s4<->D10
 	//GPF0<->GPF6 GPF2<->GPF5 GPG3<->GPF4
 
-	/**
 	while(1){
 		if(*pGPFDAT & (1<<0) == 0){
 			//按下s2 低电平0
 			*pGPFDAT &= ~(1<<6);
-			*pGPFDAT |= (0<<6);
+			//*pGPFDAT |= (0<<6);
 		}else{
-			*pGPFDAT &= ~(1<<6);
+			//*pGPFDAT &= ~(1<<6);
 			*pGPFDAT |= (1<<6);
 		}
 	}
-	*/
-	*pGPFDAT = 0;
+	
+	//*pGPFDAT = 0xff;
 	return 0;
 
 }
