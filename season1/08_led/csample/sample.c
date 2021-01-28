@@ -36,6 +36,11 @@ int main()
         printf("not equals 0 \n");
 
     }
+
+    unsigned int    iTest  = 0xffffffff;
+    printf("before %d \n",iTest);
+    iTest &= ~(1<<4);
+    printf("after %d \n",iTest);
 }
 
 
