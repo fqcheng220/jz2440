@@ -6,26 +6,25 @@ _start:
 	ldr r0, =0x53000000
 	ldr r1, =0
 	str r1, [r0]
-
+	
 	ldr sp,=4096
 	/**
 	 * 目标：
-	 * 设置FCLK始终频率为400MHZ
+	 * 设置FCLK始终频率为320MHZ
 	 * 寄存器释义:
 	 * MPLLCON [19:12]=MDIV [9:4]=PDIV [1:0]=SDIV
 	 * MPLL(FCLK) = (2*m*Fin)/(p*2^s) 其中m=MDIV+8,p=PDIV+2,s=SDIV,fin为晶振频率12MHZ 
 	 *
-	 * 所以可以让MDIV=92,PDIV=1,SDIV=1
+	 * 所以可以让MDIV=72,PDIV=1,SDIV=1
 	 * MPLLCON地址为0x4C000004
-	 * (92<<12 | 1<<4 | 1) 十六进制表示为0x5c011 对应400MHZ
-	 * (17<<12 | 1<<4 | 1) 十六进制表示为0x11011 对应100MHZ
+	 * (72<<12 | 1<<4 | 1) 十六进制表示为0x60011 对应320MHZ
 	 */
 	ldr r0,=0x4C000004
-	ldr r1,=0x5c011
+	ldr r1,=0x60011
 	str r1,[r0]
 	/**
 	 * 目标：
-	 * 设置FCLK:HCLK:PCLK 1:4:8 即400MHZ：100MHZ：50MHZ
+	 * 设置FCLK:HCLK:PCLK 1:4:8 即320MHZ：80MHZ：40MHZ
 	 * 寄存器释义:
 	 * CLKDIVN [2:1]=HDIVN [0]=PDIVN
 	 * CAMDIVN [9]=HCLK4_HALF [8]=HCLK3_HALF
