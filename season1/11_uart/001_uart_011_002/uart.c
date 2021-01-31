@@ -16,13 +16,13 @@ void uart_init(){
 	//UBRDIVn = (int)(40000000 / (115200 x 16) ) -1
 	//= (int)(21.7) -1 [round to the nearest whole number]
 	//= 22 -1 = 21
-	// UBRDIV0 |= 0x15;
+	UBRDIV0 |= 0x15;
 
 	//PCLK为50MHZ时候
 	//UBRDIVn = (int)(50000000 / (115200 x 16) ) -1
 	//= (int)(27.1) -1 [round to the nearest whole number]
 	//= 27 -1 = 26
-	 UBRDIV0 |= 26;
+	//UBRDIV0 |= 26;
 
 	//设置传输格式
 	//寄存器释义:

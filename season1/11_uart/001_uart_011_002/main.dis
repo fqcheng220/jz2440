@@ -22,7 +22,7 @@ Disassembly of section .text:
 00000038 <loop>:
   38:	eafffffe 	b	38 <loop>
   3c:	4c000004 	stcmi	0, cr0, [r0], {4}
-  40:	0005c011 	andeq	ip, r5, r1, lsl r0
+  40:	00048011 	andeq	r8, r4, r1, lsl r0
   44:	4c000014 	stcmi	0, cr0, [r0], {20}
 
 00000048 <methodRandomName>:
@@ -70,7 +70,7 @@ Disassembly of section .text:
   e4:	e3a03205 	mov	r3, #1342177280	; 0x50000000
   e8:	e2833028 	add	r3, r3, #40	; 0x28
   ec:	e5933000 	ldr	r3, [r3]
-  f0:	e383301a 	orr	r3, r3, #26	; 0x1a
+  f0:	e3833015 	orr	r3, r3, #21	; 0x15
   f4:	e5823000 	str	r3, [r2]
   f8:	e3a02205 	mov	r2, #1342177280	; 0x50000000
   fc:	e3a03205 	mov	r3, #1342177280	; 0x50000000
